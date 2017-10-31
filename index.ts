@@ -41,8 +41,6 @@ export class BsiTokenParser {
         let baseUri = null;
         if (url.protocol && url.host) {
             baseUri = `${url.protocol}//${url.host}`;
-            // if (url.port)
-            //     baseUri = `${baseUri}:${url.port}`;
         }
 
         const token: IBsiToken = {
@@ -70,17 +68,6 @@ export class BsiTokenParser {
         };
 
         return token;
-    }
-
-    private parseQueryString(query: string) {
-        var result: IDictionary = {};
-        var pairs = (query[0] === '?' ? query.substr(1) : query).split('&');
-        for (var i = 0; i < pairs.length; i++) {
-            var pair = pairs[i].split('=');
-            result[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-        }
-
-        return result;
     }
 
     private parseBsiToken(encodedToken: string): IBsiToken {
@@ -114,8 +101,4 @@ export interface IBsiToken {
 
     includeThirdParty: boolean;
     includeOpenSourceAnalysis: boolean;
-}
-
-interface IDictionary {
-    [Key: string]: string;
 }
