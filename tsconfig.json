@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "UMD",
+        "noImplicitAny": true,
+        "strict": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": false,
+        "outDir": "dist",
+        "declaration": true,
+        "pretty": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "exclude": [
+        "./node_modules",
+        "./test",
+        "./dist"
+    ]
+}
