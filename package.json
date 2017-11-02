@@ -1,5 +1,5 @@
 {
-  "name": "bsi-token-parser",
+  "name": "@fortify/bsi-token-parser",
   "version": "0.0.1",
   "description": "A parsing library for using Build Server Integration tokens from the Fortify on Demand portal.",
   "main": "index.js",
