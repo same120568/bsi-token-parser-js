@@ -16,17 +16,17 @@
   "author": "Matt Gibbs <matt.gibbs@microfocus.com>",
   "license": "MIT",
   "devDependencies": {
-    "@types/chai": "^4.0.4",
-    "@types/js-base64": "^2.3.0",
-    "@types/mocha": "^2.2.44",
-    "@types/url-parse": "^1.1.0",
-    "chai": "^4.1.2",
+    "@types/chai": "4.0.4",
+    "@types/js-base64": "2.3.0",
+    "@types/mocha": "2.2.44",
+    "@types/url-parse": "1.1.0",
+    "chai": "4.1.2",
     "mocha": "4.0.1",
-    "ts-node": "^3.3.0",
+    "ts-node": "3.3.0",
     "typescript": "2.5.3"
   },
   "dependencies": {
     "js-base64": "2.3.2",
-    "url-parse": "^1.1.9"
+    "url-parse": "1.1.9"
   }
 }
