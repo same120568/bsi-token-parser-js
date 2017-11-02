@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "module": "UMD",
+        "module": "umd",
+        "lib": [
+            "es2015",
+            "es2015.iterable"
+        ],
         "noImplicitAny": true,
         "strict": false,
         "removeComments": true,
