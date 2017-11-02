@@ -3,3 +3,6 @@ test
 *.test
 tsconfig.json
 npm-debug.log
+index.ts
+.gitattributes
+.gitignore
