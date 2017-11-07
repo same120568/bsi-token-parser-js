@@ -2,7 +2,8 @@
   "name": "@fortify/bsi-token-parser",
   "version": "0.0.2",
   "description": "A parsing library for using Build Server Integration tokens from the Fortify on Demand portal.",
-  "main": "dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "mocha -R spec -r ts-node/register test/**/*.ts",
     "compile": "tsc",
