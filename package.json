@@ -1,13 +1,13 @@
 {
   "name": "@fortify/bsi-token-parser",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A parsing library for using Build Server Integration tokens from the Fortify on Demand portal.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "mocha -R spec -r ts-node/register test/**/*.ts",
     "compile": "tsc",
-    "package": "rimraf ./dist && tsc"
+    "package": "npm run test && rimraf ./dist && tsc"
   },
   "keywords": [
     "fortify",
