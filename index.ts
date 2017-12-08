@@ -6,7 +6,7 @@ export class BsiTokenParser {
     private static _tokenDefaults: IBsiToken = {
         tenantId: 0,
         tenantCode: '',
-        projectVersionId: 0,
+        releaseId: 0,
         assessmentTypeId: 0,
         payloadType: 'ANALYSIS_PAYLOAD',
         scanPreferenceId: 1,
@@ -50,7 +50,7 @@ export class BsiTokenParser {
             tenantCode: url.query['tc'],
             assessmentTypeId: parseInt(url.query['astid']),
             payloadType: url.query['payloadType'],
-            projectVersionId: parseInt(url.query['pv']),
+            releaseId: parseInt(url.query['pv']),
             technologyType: url.query['ts'],
             technologyVersion: url.query['ll'] || BsiTokenParser._tokenDefaults.technologyVersion,
             includeOpenSourceAnalysis: BsiTokenParser._tokenDefaults.includeOpenSourceAnalysis,
@@ -79,7 +79,7 @@ export class BsiTokenParser {
 export interface IBsiToken {
     tenantId: number;
     tenantCode: string;
-    projectVersionId: number;
+    releaseId: number;
     assessmentTypeId: number;
 
     payloadType: string;

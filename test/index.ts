@@ -95,5 +95,11 @@ const parser = new BsiTokenParser();
             const token = parser.parse(bsiToken2);
             expect(token.portalUri).to.equal("http://fod.localhost");
         });
+
+        it('should have a Release ID of "321"', () => {
+            const token = parser.parse(bsiToken2);
+            expect(token.releaseId).to.equal(321);
+        })
+
     });
 }
