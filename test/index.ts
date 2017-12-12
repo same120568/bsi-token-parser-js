@@ -124,7 +124,17 @@ const parser = new BsiTokenParser();
         it('should have a Release ID of "321"', () => {
             const token = parser.parse(bsiToken2);
             expect(token.releaseId).to.equal(321);
-        })
+        });
+
+        it('should have Scan Preference Id of "1"', () => {
+            const token = parser.parse(bsiToken2);
+            expect(token.scanPreferenceId).to.equal(1);
+        });
+
+        it('should have a Scan Preference of "Standard"', () => {
+            const token = parser.parse(bsiToken2);
+            expect(token.scanPreference).to.equal('Standard');
+        });
 
     });
 }
