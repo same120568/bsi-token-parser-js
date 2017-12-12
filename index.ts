@@ -36,13 +36,13 @@ export class BsiTokenParser {
 
     private parseLegacyUrl(urlString: string): IBsiToken {
 
-        const url = urlParse(urlString);
+        const url = urlParse(urlString, true);
         
         let baseUri = null;
         if (url.protocol && url.host) {
             baseUri = `${url.protocol}//${url.host}`;
         }
-
+        
         const token: IBsiToken = {
             apiUri: baseUri || BsiTokenParser._tokenDefaults.apiUri,
             portalUri: BsiTokenParser._tokenDefaults.portalUri,

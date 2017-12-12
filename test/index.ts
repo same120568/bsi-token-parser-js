@@ -8,7 +8,7 @@ const parser = new BsiTokenParser();
 
         it('should at least parse without crashing', () => {
             const result = parser.parse(bsiUrl1);
-            
+
         });
 
         it('should parse tokens and provide defaults where data is missing', () => {
@@ -20,6 +20,31 @@ const parser = new BsiTokenParser();
             expect(token.includeOpenSourceAnalysis).to.equal(false);
             expect(token.portalUri).to.equal('https://ams.fortify.com');
             expect(token.apiUri).to.equal('https://api.ams.fortify.com');
+        });
+
+        it('should have a Release ID of "332"', () => {
+            const token = parser.parse(bsiUrl1);
+            expect(token.releaseId).to.equal(332);
+        });
+
+        it('should have an Assessment Type ID of "7"', () => {
+            const token = parser.parse(bsiUrl1);
+            expect(token.assessmentTypeId).to.equal(7);
+        });
+
+        it('should have a Technology Type of "ABAP"', () => {
+            const token = parser.parse(bsiUrl1);
+            expect(token.technologyType).to.equal('ABAP');
+        });
+
+        it('should have a Tenant ID of "1"', () => {
+            const token = parser.parse(bsiUrl1);
+            expect(token.tenantId).to.equal(1);
+        });
+
+        it('should have a Tenant Code of "Tenant1"', () => {
+            const token = parser.parse(bsiUrl1);
+            expect(token.tenantCode).to.equal("Tenant1");
         });
     });
 }
@@ -59,7 +84,7 @@ const parser = new BsiTokenParser();
         it('should at least parse without crashing', () => {
             parser.parse(bsiToken2);
         });
-        
+
         it('should have a Technology Type of "JAVA/J2EE"', () => {
             const token = parser.parse(bsiToken2);
             expect(token.technologyType).to.equal("JAVA/J2EE");
@@ -85,7 +110,7 @@ const parser = new BsiTokenParser();
             const token = parser.parse(bsiToken2);
             expect(token.assessmentTypeId).to.equal(8);
         });
-        
+
         it('should have an API URI of "http://api.fod.localhost"', () => {
             const token = parser.parse(bsiToken2);
             expect(token.apiUri).to.equal("http://api.fod.localhost");
