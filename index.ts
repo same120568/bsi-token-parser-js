@@ -15,7 +15,7 @@ import * as urlParse from 'url-parse';
 import { Base64 } from 'js-base64';
 
 export class BsiTokenParser {
-    
+
     private static _tokenDefaults: IBsiToken = {
         tenantId: 0,
         tenantCode: '',
@@ -50,12 +50,12 @@ export class BsiTokenParser {
     private parseLegacyUrl(urlString: string): IBsiToken {
 
         const url = urlParse(urlString, true);
-        
+
         let baseUri = null;
         if (url.protocol && url.host) {
             baseUri = `${url.protocol}//${url.host}`;
         }
-        
+
         const token: IBsiToken = {
             apiUri: baseUri || BsiTokenParser._tokenDefaults.apiUri,
             portalUri: BsiTokenParser._tokenDefaults.portalUri,
@@ -72,7 +72,7 @@ export class BsiTokenParser {
             includeThirdParty: BsiTokenParser._tokenDefaults.includeThirdParty,
             scanPreference: BsiTokenParser._tokenDefaults.scanPreference,
             scanPreferenceId: BsiTokenParser._tokenDefaults.scanPreferenceId,
-            
+
             // these values can't be filled in with legacy URLs
             // would need to make a converter that remembers
             // will come back and do that if it becomes necessary
@@ -84,7 +84,15 @@ export class BsiTokenParser {
     }
 
     private parseBsiToken(encodedToken: string): IBsiToken {
-        const decodedToken = JSON.parse(Base64.decode(encodedToken));
+        const decodedToken: IBsiToken = JSON.parse(Base64.decode(encodedToken));
+
+        // Some tokens generated invalid scanPreference values
+        // to support these "bad" tokens, fix the default value to Standard
+        if (decodedToken.scanPreference === '0') {
+            decodedToken.scanPreference = BsiTokenParser._tokenDefaults.scanPreference;
+        }
+        decodedToken.scanPreferenceId = decodedToken.scanPreferenceId || BsiTokenParser._tokenDefaults.scanPreferenceId;
+
         return decodedToken;
     }
 }
