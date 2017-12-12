@@ -13,9 +13,17 @@
     "fortify",
     "fortify-on-demand",
     "security",
-    "CI"
+    "CI",
+    "BSI"
   ],
   "author": "Matt Gibbs <matt.gibbs@microfocus.com>",
+  "bugs": {
+    "url": "https://github.com/fortify/bsi-token-parser-js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fortify/bsi-token-parser-js.git"
+  },
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/chai": "4.0.4",
