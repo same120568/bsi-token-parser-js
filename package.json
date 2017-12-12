@@ -1,6 +1,6 @@
 {
   "name": "@fortify/bsi-token-parser",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A parsing library for using Build Server Integration tokens from the Fortify on Demand portal.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,7 @@
     "CI"
   ],
   "author": "Matt Gibbs <matt.gibbs@microfocus.com>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/chai": "4.0.4",
     "@types/js-base64": "2.3.0",
